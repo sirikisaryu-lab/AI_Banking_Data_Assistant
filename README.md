@@ -36,26 +36,37 @@ An intelligent, conversational AI assistant for banking data analysis. It accept
 
 ## Architecture Overview
 
-```
 User Query (HTTP POST /query)
         │
         ▼
-  Intent Classifier  ──── GPT-4o-mini classifies intent
+Intent Classifier (GPT-4o-mini)
         │
-        ├── GREETING              → Direct response
+        ├── 1️⃣ GREETING
+        │       └── Direct conversational response
         │
-        ├── STRUCTURED_DATA_QUERY → SQL Engine → Snowflake → Structured Insights (LLM)
+        ├── 2️⃣ STRUCTURED_DATA_QUERY
+        │       ├── SQL Engine
+        │       ├── Snowflake Execution
+        │       └── LLM → Structured Insights
         │
-        ├── UNSTRUCTURED_DATA_QUERY → RAG Engine (FAISS + PDFs) → Unstructured Insights (LLM)
+        ├── 3️⃣ UNSTRUCTURED_DATA_QUERY
+        │       ├── RAG Engine
+        │       │     ├── FAISS Vector Store
+        │       │     └── PDF / Document Retrieval
+        │       └── LLM → Unstructured Insights
         │
-        └── CLIENT360             → SQL Engine + RAG Engine → Combined Insights (LLM)
-                                                    │
-                                                    ▼
-                                        Explainability Generator
-                                                    │
-                                                    ▼
-                                     Response + Reasoning + Data Sources
-```
+        └── 4️⃣ CLIENT360
+                ├── SQL Engine (Structured Data)
+                ├── RAG Engine (Unstructured Data)
+                ├── Insight Merger
+                └── LLM → Holistic Client 360 Insights
+
+                                │
+                                ▼
+                    Explainability Generator
+                                │
+                                ▼
+            Final Response + Reasoning + Data Sources
 
 ---
 
