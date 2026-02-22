@@ -64,32 +64,32 @@ User Query (HTTP POST /query)
 ```
 AI_DATA_BANKING_SYSTEM/
 ├── app/
-│   ├── main.py                  # FastAPI app entry point, serves UI and /query endpoint
+│   ├── main.py                  
 │   └── config/
-│       └── settings.py          # Environment variable config (Pydantic settings)
+│       └── settings.py          
 ├── core/
-│   ├── intent_classifier.py     # Classifies query intent using LLM
-│   └── query_router.py          # Routes queries, orchestrates pipelines, builds responses
+│   ├── intent_classifier.py     
+│   └── query_router.py          
 ├── db/
-│   ├── data.py                  # (Data utilities)
-│   ├── db_executor.py           # Executes SQL against Snowflake
-│   ├── schema_loader.py         # Fetches and formats the DB schema for LLM context
-│   └── snowflake_connection.py  # Snowflake connector setup
+│   ├── data.py                  
+│   ├── db_executor.py           
+│   ├── schema_loader.py         
+│   └── snowflake_connection.py  
 ├── llm/
-│   ├── llm_client.py            # OpenAI GPT-4o-mini wrapper with conversation history
-│   └── prompts.py               # All system and task prompts
+│   ├── llm_client.py            
+│   └── prompts.py               
 ├── rag/
-│   └── rag_engine.py            # PDF loader, FAISS indexer, and retrieval engine
+│   └── rag_engine.py            
 ├── security/
-│   └── sql_validator.py         # Validates SQL is read-only before execution
+│   └── sql_validator.py         
 ├── structured/
-│   └── sql_engine.py            # Natural language → SQL generation with retry support
-├── documents/                   # Drop PDF documents here for RAG indexing
-├── faiss_index/                 # Auto-generated FAISS vector index (persisted)
+│   └── sql_engine.py            
+├── documents/                   
+├── faiss_index/                 
 ├── ui/
-│   └── html.html                # Chat frontend
-├── .env                         # Environment variables (not committed)
-├── requirements.txt             # Python dependencies
+│   └── html.html                
+├── .env                         
+├── requirements.txt             
 └── README.md
 ```
 
