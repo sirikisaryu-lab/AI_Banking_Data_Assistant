@@ -1,4 +1,4 @@
-# AI Data Banking System
+# AI Banking Data Assistant
 
 An intelligent, conversational AI assistant for banking data analysis. It accepts natural language queries and automatically routes them to the appropriate data pipeline — structured SQL queries against Snowflake, document retrieval via RAG, or a combined Client 360 view — then returns a human-readable answer with explainability metadata.
 
