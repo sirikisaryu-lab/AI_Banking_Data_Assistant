@@ -1,1 +1,13 @@
 
+openai
+snowflake-connector-python
+python-dotenv
+langchain
+faiss-cpu
+langchain-openai 
+langchain-community
+langchain-text-splitters
+openai
+pypdf
+fastapi
+uvicorn
