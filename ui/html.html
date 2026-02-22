@@ -1376,7 +1376,7 @@ function appendMessage(role, content, animate = true, explainability = null) {
     const sourceBadges = sources.length
       ? sources.map(src => {
           const isDB  = src.toLowerCase().includes('snowflake') || src.toLowerCase().includes('database');
-          const cls   = isDB ? 'db' : 'rag';
+          const cls   = isDB ? 'db' : 'kb';
           const icon  = isDB ? '🗄️' : '📄';
           return `<span class="source-badge ${cls}">${icon} ${src}</span>`;
         }).join('')
